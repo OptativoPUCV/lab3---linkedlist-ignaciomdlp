@@ -105,7 +105,8 @@ void * popCurrent(List * list){
   if(list == NULL) exit(EXIT_FAILURE);
 
   Node noNodo = list->current;
-
+  void *data = noNodo->data;
+  
   if(noNodo == list->head && noNodo == list->tail){
     list->head = NULL;
     list->tail = NULL;

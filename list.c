@@ -111,17 +111,17 @@ void * popCurrent(List * list){
     list->tail = NULL;
   }
   else if(noNodo == list->head){
-    list->head = list->head->next;
-    list->head->prev = NULL;
+    list->head = list->head->prev;
+    list->head-> next= NULL;
   }
   else if(noNodo == list->tail){
-    list->tail = list->tail->prev;
-    list->tail->next = NULL;
+    list->tail = list->tail->next;
+    list->tail->prev = NULL;
   }
   else{
     noNodo->prev->next = noNodo->next;
     noNodo->next->prev = noNodo->prev;
-      }
+  }
   list->current = noNodo->next;
   free(noNodo);
   return data;

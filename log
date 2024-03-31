@@ -372,3 +372,60 @@ In file included from test.c:2:
       |                   ~~~~~~^~~~~
 Compilation failed
 c64db0e
+Sun 31 Mar 2024 01:54:20 AM UTC: 
+ list.c | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+In file included from test.c:5:
+list.c: In function ‘popCurrent’:
+list.c:117:17: error: invalid initializer
+  117 |   Node noNodo = list->current;
+      |                 ^~~~
+list.c:118:22: error: invalid type argument of ‘->’ (have ‘Node’)
+  118 |   void *data = noNodo->data;
+      |                      ^~
+list.c:120:13: error: invalid operands to binary == (have ‘Node’ and ‘Node *’)
+  120 |   if(noNodo == list->head && noNodo == list->tail){
+      |             ^~ ~~~~~~~~~~
+      |                    |
+      |                    Node *
+list.c:120:37: error: invalid operands to binary == (have ‘Node’ and ‘Node *’)
+  120 |   if(noNodo == list->head && noNodo == list->tail){
+      |                                     ^~ ~~~~~~~~~~
+      |                                            |
+      |                                            Node *
+list.c:124:18: error: invalid operands to binary == (have ‘Node’ and ‘Node *’)
+  124 |   else if(noNodo == list->head){
+      |                  ^~ ~~~~~~~~~~
+      |                         |
+      |                         Node *
+list.c:128:18: error: invalid operands to binary == (have ‘Node’ and ‘Node *’)
+  128 |   else if(noNodo == list->tail){
+      |                  ^~ ~~~~~~~~~~
+      |                         |
+      |                         Node *
+list.c:133:11: error: invalid type argument of ‘->’ (have ‘Node’)
+  133 |     noNodo->prev->next = noNodo->next;
+      |           ^~
+list.c:133:32: error: invalid type argument of ‘->’ (have ‘Node’)
+  133 |     noNodo->prev->next = noNodo->next;
+      |                                ^~
+list.c:134:11: error: invalid type argument of ‘->’ (have ‘Node’)
+  134 |     noNodo->next->prev = noNodo->prev;
+      |           ^~
+list.c:134:32: error: invalid type argument of ‘->’ (have ‘Node’)
+  134 |     noNodo->next->prev = noNodo->prev;
+      |                                ^~
+list.c:136:25: error: invalid type argument of ‘->’ (have ‘Node’)
+  136 |   list->current = noNodo->next;
+      |                         ^~
+list.c:137:8: error: incompatible type for argument 1 of ‘free’
+  137 |   free(noNodo);
+      |        ^~~~~~
+      |        |
+      |        Node
+In file included from test.c:2:
+/nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/stdlib.h:555:25: note: expected ‘void *’ but argument is of type ‘Node’
+  555 | extern void free (void *__ptr) __THROW;
+      |                   ~~~~~~^~~~~
+Compilation failed
+b5a7319

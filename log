@@ -69,3 +69,9 @@ list.c:77:18: error: incompatible types when assigning to type ‘Node *’ from
       |                  ^~~~
 Compilation failed
 01438d1
+Sun 31 Mar 2024 01:33:12 AM UTC: 
+ list.c | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+ tests:  10|2
+total_score: 45/70
+ebf947e

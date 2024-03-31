@@ -1,0 +1,11 @@
+Sun 31 Mar 2024 01:15:07 AM UTC: 
+ list.c | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+list.c: In function ‘createList’:
+list.c:33:7: error: suggest parentheses around assignment used as truth value [-Werror=parentheses]
+   33 |   if (L = NULL) exit(EXIT_FAILURE);
+      |       ^
+cc1: all warnings being treated as errors
+Compilation failed
+eb09254
